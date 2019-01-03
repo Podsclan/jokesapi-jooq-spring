@@ -91,4 +91,36 @@ class DaoJokes {
         create.update(AUTHOR).set(AUTHOR.AUTHOR_NAME, aux.getName()).where(AUTHOR.AUTHOR_ID.eq(aux.getId())).execute();
         return true;
     }
+
+    public boolean createJoke(Joke aux) {
+        //INSERT INTO JOKE (JOKE_TYPE, JOKE_JOKE, JOKE_AUTHORID) VALUES (?, ?, ?)
+        Connection conn = DataBase.getConnection();
+        DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
+        create.insertInto(JOKE, JOKE.JOKE_TYPE, JOKE.JOKE_JOKE, JOKE.JOKE_AUTHORID).values(aux.getType(), aux.getJoke(), aux.getAuthor().getId()).execute();
+        return true;
+    }
+
+    public boolean createAuthor(Author aux) {
+        //INSERT INTO AUTHOR (AUTHOR_NAME) VALUES (?)
+        Connection conn = DataBase.getConnection();
+        DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
+        create.insertInto(AUTHOR, AUTHOR.AUTHOR_NAME).values(aux.getName()).execute();
+        return true;
+    }
+
+    public boolean deleteJoke(int id) {
+        //DELETE from JOKE where JOKE_ID = ?
+        Connection conn = DataBase.getConnection();
+        DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
+        create.delete(JOKE).where(JOKE.JOKE_ID.eq(id)).execute();
+        return true;
+    }
+
+    public boolean deleteAuthor(int id) {
+        //DELETE from AUTHOR where AUTHOR_ID = ?
+        Connection conn = DataBase.getConnection();
+        DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
+        create.delete(AUTHOR).where(AUTHOR.AUTHOR_ID.eq(id)).execute();
+        return true;
+    }
 }

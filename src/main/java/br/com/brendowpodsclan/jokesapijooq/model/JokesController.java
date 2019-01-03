@@ -60,31 +60,31 @@ public class JokesController {
     }
 
 //    //CREATING NEW JOKES OR AUTHORS
-//
-//    @RequestMapping(value ="/jokes/create", method = RequestMethod.POST, produces = "application/json")
-//    public boolean createJoke(@RequestBody Jokes aux) {
-//        DaoJokes db = new DaoJokes();
-//        return db.createJoke(aux);
-//    }
-//
-//    @RequestMapping(value ="/authors/create", method = RequestMethod.POST, produces = "application/json")
-//    public boolean createAuthor(@RequestBody Author aux) {
-//        DaoJokes db = new DaoJokes();
-//        return db.createAuthor(aux);
-//    }
-//
+
+    @RequestMapping(value ="/jokes/create", method = RequestMethod.POST, produces = "application/json")
+    public boolean createJoke(@RequestBody Joke aux) {
+        DaoJokes db = new DaoJokes();
+        return db.createJoke(aux);
+    }
+
+    @RequestMapping(value ="/authors/create", method = RequestMethod.POST, produces = "application/json")
+    public boolean createAuthor(@RequestBody Author aux) {
+        DaoJokes db = new DaoJokes();
+        return db.createAuthor(aux);
+    }
+
 //    //DELETING JOKE OR AUTHOR
-//
-//    @RequestMapping(value ="/jokes/delete", method = RequestMethod.DELETE)
-//    public boolean deleteJoke(@RequestParam("id") int id) {
-//        DaoJokes db = new DaoJokes();
-//        return db.deleteJoke(id);
-//    }
-//
-//    @RequestMapping(value ="/authors/delete", method = RequestMethod.DELETE)
-//    public boolean deleteAuthor(@RequestParam("id") int id) {
-//        DaoJokes db = new DaoJokes();
-//        return db.deleteAuthor(id);
-//    }
+
+    @RequestMapping(value ="/jokes/delete", method = RequestMethod.DELETE)
+    public boolean deleteJoke(@RequestParam("id") int id) {
+        DaoJokes db = new DaoJokes();
+        return db.deleteJoke(id);
+    }
+
+    @RequestMapping(value ="/authors/delete", method = RequestMethod.DELETE)
+    public boolean deleteAuthor(@RequestParam("id") int id) {
+        DaoJokes db = new DaoJokes();
+        return db.deleteAuthor(id);
+    }
 
 }
