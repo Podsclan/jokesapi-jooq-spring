@@ -36,29 +36,29 @@ public class JokesController {
     }
 
 //    //UPDATING JOKES OR AUTHORS
-//
-//    @RequestMapping(value = "/jokes/update", method = RequestMethod.PUT, produces = "application/json")
-//    public boolean update (@RequestBody Jokes aux) {        //method which update some joke's information on database
-//        DaoJokes db = new DaoJokes();
-//        if (aux.getId() != 0) {
-//            if (db.read(aux.getId()) != null) {
-//                return db.updateJoke(aux);
-//            }
-//        }
-//        return false;
-//    }
-//
-//    @RequestMapping(value = "/authors/update", method = RequestMethod.PUT, produces = "application/json")
-//    public boolean update (@RequestBody Author aux) {        //method which update some joke's information on database
-//        DaoJokes db = new DaoJokes();
-//        if (aux.getId() != 0) {
-//            if (db.read(aux.getId()) != null) {
-//                return db.updateAuthor(aux);
-//            }
-//        }
-//        return false;
-//    }
-//
+
+    @RequestMapping(value = "/jokes/update", method = RequestMethod.PUT, produces = "application/json")
+    public boolean update (@RequestBody Joke aux) {        //method which update some joke's information on database
+        DaoJokes db = new DaoJokes();
+        if (aux.getId() != 0) {
+            if (db.read(aux.getId()) != null) {
+                return db.updateJoke(aux);
+            }
+        }
+        return false;
+    }
+
+    @RequestMapping(value = "/authors/update", method = RequestMethod.PUT, produces = "application/json")
+    public boolean update (@RequestBody Author aux) {        //method which update some joke's information on database
+        DaoJokes db = new DaoJokes();
+        if (aux.getId() != 0) {
+            if (db.read(aux.getId()) != null) {
+                return db.updateAuthor(aux);
+            }
+        }
+        return false;
+    }
+
 //    //CREATING NEW JOKES OR AUTHORS
 //
 //    @RequestMapping(value ="/jokes/create", method = RequestMethod.POST, produces = "application/json")

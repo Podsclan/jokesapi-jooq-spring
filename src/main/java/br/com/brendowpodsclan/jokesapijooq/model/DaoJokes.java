@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static br.com.brendowpodsclan.jokesapijooq.model.tables.Tables.AUTHOR;
+import static br.com.brendowpodsclan.jokesapijooq.model.tables.Tables.JOKE;
 
 class DaoJokes {
 
@@ -73,5 +74,21 @@ class DaoJokes {
         author.setId(rs.getValue(AUTHOR.AUTHOR_ID));
         author.setName(rs.getValue(AUTHOR.AUTHOR_NAME));
         return author;
+    }
+
+    public boolean updateJoke(Joke aux) {
+        //UPDATE JOKE SET JOKE_TYPE = ?, JOKE_JOKE = ?, JOKE_AUTHORID = ?  WHERE JOKE_ID = ?
+        Connection conn = DataBase.getConnection();
+        DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
+        create.update(JOKE).set(JOKE.JOKE_TYPE, aux.getType()).set(JOKE.JOKE_JOKE, aux.getJoke()).set(JOKE.JOKE_AUTHORID, aux.getAuthor().getId()).where(JOKE.JOKE_ID.eq(JOKE.JOKE_ID)).execute();
+        return true;
+    }
+
+    public boolean updateAuthor(Author aux) {
+        //UPDATE AUTHOR SET AUTHOR_NAME = ? WHERE AUTHOR_ID = ?
+        Connection conn = DataBase.getConnection();
+        DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
+        create.update(AUTHOR).set(AUTHOR.AUTHOR_NAME, aux.getName()).where(AUTHOR.AUTHOR_ID.eq(aux.getId())).execute();
+        return true;
     }
 }
