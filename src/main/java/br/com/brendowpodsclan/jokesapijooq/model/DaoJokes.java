@@ -16,7 +16,7 @@ import java.util.List;
 import static br.com.brendowpodsclan.jokesapijooq.model.tables.Tables.AUTHOR;
 import static br.com.brendowpodsclan.jokesapijooq.model.tables.Tables.JOKE;
 
-class DaoJokes {
+public class DaoJokes {
 
     public Joke read(int id) {
         Connection conn = DataBase.getConnection();

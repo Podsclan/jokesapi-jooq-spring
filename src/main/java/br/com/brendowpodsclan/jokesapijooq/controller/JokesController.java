@@ -1,5 +1,6 @@
-package br.com.brendowpodsclan.jokesapijooq.model;
+package br.com.brendowpodsclan.jokesapijooq.controller;
 
+import br.com.brendowpodsclan.jokesapijooq.model.DaoJokes;
 import br.com.brendowpodsclan.jokesapijooq.model.Entity.Author;
 import br.com.brendowpodsclan.jokesapijooq.model.Entity.Joke;
 import org.springframework.web.bind.annotation.*;
