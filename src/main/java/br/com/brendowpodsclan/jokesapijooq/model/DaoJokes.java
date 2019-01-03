@@ -45,7 +45,6 @@ public class DaoJokes {
 
 
     private Joke getJokeFromResult(Record rs) {
-
         Joke joke = new Joke();
         Author author = new Author();
             joke.setId(rs.getValue(Tables.JOKE.JOKE_ID));
