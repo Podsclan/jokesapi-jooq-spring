@@ -1,6 +1,5 @@
 package br.com.brendowpodsclan.jokesapijooq.model;
 
-import br.com.brendowpodsclan.jokesapijooq.model.tables.DaoJokes;
 import br.com.brendowpodsclan.jokesapijooq.model.Entity.Author;
 import br.com.brendowpodsclan.jokesapijooq.model.Entity.Joke;
 import org.springframework.web.bind.annotation.*;
@@ -30,11 +29,11 @@ public class JokesController {
         return db.readAllJokes();
     }
 
-//    @RequestMapping(value = "/authors/all", method = RequestMethod.GET)
-//    public List<Author> getAllAuthor(){                       //method which return all jokes on database
-//        DaoJokes db = new DaoJokes();
-//        return db.readAllAuthors();
-//    }
+    @RequestMapping(value = "/authors/all", method = RequestMethod.GET)
+    public List<Author> getAllAuthor(){                       //method which return all authors on database
+        DaoJokes db = new DaoJokes();
+        return db.readAllAuthors();
+    }
 
 //    //UPDATING JOKES OR AUTHORS
 //
