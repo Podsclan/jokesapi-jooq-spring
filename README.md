@@ -74,10 +74,8 @@ AUTHORS ACTIONS -> jokesAPI/authors/...:
 
 					    I have to PUT this JSON
 						{
-							"author": {
 					            "id": 1,
 					            "name": "NEW NAME"
-					        }
 						}
 
 	/create -> create a new author -> POST
@@ -87,21 +85,16 @@ AUTHORS ACTIONS -> jokesAPI/authors/...:
 
 						I have to POST this JSON
 						{
-					        "author": {
-					            "id": 1,
 					            "name": "www.pianoeletronico.com.br"
-					        }
-					    }
+					  	}
 
 	/delete -> delete an author -> DELETE
 				need to inform the id as a parameter;
 				Exemple: I wanto to delete this author
 						{
-					        "author": {
 					            "id": 1,
-					            "name": "www.pianoeletronico.com.br"
-					        }
-					    }
+					            "name": "www.pianoeletronico.com.br"					        
+					    	}
 
 					    I have to DELETE using the id 1 like this
 					    /jokesAPI/jokes/delete?id=1
